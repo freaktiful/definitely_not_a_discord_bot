@@ -4,6 +4,9 @@ import os
 import discord
 from dotenv import load_dotenv
 
+#uncomment this line if you are coding the bot in repl.it in order to launch it online
+#from keep_alive import keep_alive
+
 #load variables from .env
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -71,5 +74,7 @@ async def on_message(message):
         embed.add_field(name='\u200b', value=str1.join(mensaje), inline=False)
         channel = discord.utils.get(client.get_all_channels(), name="{welcome_archive_channel}")
         await channel.send(embed=embed)
-    
+
+#uncomment this line if you are coding the bot in repl.it in order to launch it online    
+#keep_alive()
 client.run(TOKEN)
